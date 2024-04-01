@@ -1,11 +1,11 @@
 public class ArrayDeque <T>{
-    public T[] items;
-    public int size;
-    public int nextfrist;
-    public int nextlast;
-    public double R=0.25;
+    private T[] items;
+    private int size;
+    private int nextfrist;
+    private int nextlast;
+    private double R=0.25;
     //计算下一个first,实现循环利用
-    public int compute_nextfirst(int nextfirst){
+    private int compute_nextfirst(int nextfirst){
         if (nextfirst==0){
             nextfirst=items.length-1;
             return nextfirst;
@@ -17,7 +17,7 @@ public class ArrayDeque <T>{
 
     }
     //计算下一个Last
-    public int compute_nextLast(int nextlast){
+    private int compute_nextLast(int nextlast){
         if (nextlast==items.length-1){
             nextlast=0;
             return nextlast;
@@ -29,7 +29,7 @@ public class ArrayDeque <T>{
 
     }
     //在数组满的时候，扩大数组
-    public void resize(int capacity){
+    private void resize(int capacity){
         T[] a=(T[]) new Object[capacity];
         int first=(nextfrist+1)%items.length;
         int last= nextlast==0?items.length-1:nextlast-1;
@@ -132,34 +132,35 @@ public class ArrayDeque <T>{
         if (isEmpty() || index>=size){
             return null;
         }
-        int first=(nextfrist+1)%items.length;
-        return items[first+index];
+
+        return items[(nextfrist+1+index)%items.length];
 
 
     }
-//    public static void main(String[] args){
-//        ArrayDeque<Integer> a= new ArrayDeque<>();
-//        a.addFirst(1);
-//        a.addLast(2);
-//        a.addFirst(0);
-//        a.addLast(3);
-//        a.addLast(4);
-//        a.addLast(5);
-//        a.addLast(6);
-//        a.addLast(7);
-//        a.addLast(8);
+    public static void main(String[] args){
+        ArrayDeque<Integer> a= new ArrayDeque<>();
+        a.addFirst(1);
+        a.addLast(2);
+        a.addFirst(0);
+        a.addLast(3);
+        a.addLast(4);
+        a.addLast(5);
+        a.addLast(6);
+        a.addLast(7);
+        a.addLast(8);
 //        a.removeFirst();
 //        a.removeLast();
 //        a.removeLast();
 //        a.removeLast();
 //        a.removeLast();
 //        a.removeLast();
-//
-//
-//        a.printDeque();
-//
-//
-//    }
+        System.out.println(8);
+
+
+        a.printDeque();
+
+
+    }
 
 
 

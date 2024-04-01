@@ -1,9 +1,9 @@
-public class LinkedListDeque <something>{
+public class LinkedListDeque <T>{
     public class Node{
         public Node prev;
-        public something item;
+        public T item;
         public Node next;
-        public Node(Node x,something y,Node z){
+        public Node(Node x,T y,Node z){
             prev=x;
             item=y;
             next=z;
@@ -20,20 +20,20 @@ public class LinkedListDeque <something>{
 
     }
     //创建带一个值的链表
-    public LinkedListDeque(something x){
+    public LinkedListDeque(T x){
         sentinel=new Node(null,null,null);
         sentinel.next=new Node(sentinel,x,sentinel);
         sentinel.prev=sentinel.next;
         size+=1;
     }
-    public void addFirst(something item){
+    public void addFirst(T item){
         sentinel.next=new Node(sentinel,item,sentinel.next);
         sentinel.next.next.prev=sentinel.next;
 
         size+=1;
 
     }
-    public void addLast(something item){
+    public void addLast(T item){
         sentinel.prev.next=new Node(sentinel.prev,item,sentinel);
         sentinel.prev=sentinel.prev.next;
         size+=1;
@@ -57,29 +57,29 @@ public class LinkedListDeque <something>{
             current=current.next;
         }
     }
-    public something removeFirst(){
+    public T removeFirst(){
         if (isEmpty()){
 
             return null;
         }
-        something item=sentinel.next.item;
+        T item=sentinel.next.item;
         sentinel.next.next.prev=sentinel;
         sentinel.next=sentinel.next.next;
         size-=1;
         return item;
 
     }
-    public something removeLast(){
+    public T removeLast(){
         if (isEmpty()){
             return null;
         }
-        something item=sentinel.prev.item;
+        T item=sentinel.prev.item;
         sentinel.prev.prev.next=sentinel;
         sentinel.prev=sentinel.prev.prev;
         size--;
         return item;
     }
-    public something get(int index){
+    public T get(int index){
         if (isEmpty() || index >=size){
             return null;
         }
@@ -91,7 +91,7 @@ public class LinkedListDeque <something>{
         }
         return current.item;
     }
-    public something getRecursice(int index,Node current){
+    public T getRecursice(int index,Node current){
         if (isEmpty() || index >=size){
             return null;
         }
