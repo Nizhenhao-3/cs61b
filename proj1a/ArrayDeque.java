@@ -137,30 +137,30 @@ public class ArrayDeque <T>{
 
 
     }
-    public static void main(String[] args){
-        ArrayDeque<Integer> a= new ArrayDeque<>();
-        a.addFirst(1);
-        a.addLast(2);
-        a.addFirst(0);
-        a.addLast(3);
-        a.addLast(4);
-        a.addLast(5);
-        a.addLast(6);
-        a.addLast(7);
-        a.addLast(8);
-//        a.removeFirst();
-//        a.removeLast();
-//        a.removeLast();
-//        a.removeLast();
-//        a.removeLast();
-//        a.removeLast();
-        System.out.println(8);
-
-
-        a.printDeque();
-
-
-    }
+//    public static void main(String[] args){
+//        ArrayDeque<Integer> a= new ArrayDeque<>();
+//        a.addFirst(1);
+//        a.addLast(2);
+//        a.addFirst(0);
+//        a.addLast(3);
+//        a.addLast(4);
+//        a.addLast(5);
+//        a.addLast(6);
+//        a.addLast(7);
+//        a.addLast(8);
+////        a.removeFirst();
+////        a.removeLast();
+////        a.removeLast();
+////        a.removeLast();
+////        a.removeLast();
+////        a.removeLast();
+//        System.out.println(8);
+//
+//
+//        a.printDeque();
+//
+//
+//    }
 
 
 

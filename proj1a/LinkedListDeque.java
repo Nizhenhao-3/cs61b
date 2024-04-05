@@ -102,6 +102,11 @@ public class LinkedListDeque <T>{
         return getRecursice(index-=1,current.next);
 
     }
+//    public static void main(String[] args){
+//        LinkedListDeque<Integer> a=new  LinkedListDeque();
+//        a.addFirst(1);
+//        a.printDeque();
+//    }
 
 
 }
