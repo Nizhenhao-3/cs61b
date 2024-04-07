@@ -107,6 +107,58 @@ public class IntList {
      * Returns a list consisting of the elements of A followed by the
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
+//    public static IntList reverse(IntList A){
+//        if (A==null){
+//
+//            return null;
+//        }
+//        else {
+//            IntList last_rest=null;
+//            IntList B=A;
+//
+//            while (B!=null){
+//                IntList C=B.rest;
+//                B.rest=last_rest;
+//                last_rest=B;
+//                B=C;
+//
+//            }
+//
+//            return last_rest;
+//
+//        }
+//
+//    }
+
+    public static IntList reverse(IntList A) {
+        IntList frontOfReversed = null;
+        IntList nextNodeToAdd = A;
+        while (nextNodeToAdd != null) {
+            IntList remainderOfOriginal = nextNodeToAdd.rest;
+            nextNodeToAdd.rest = frontOfReversed;
+            frontOfReversed = nextNodeToAdd;
+            nextNodeToAdd = remainderOfOriginal;
+        }
+        A = frontOfReversed;
+        return A;
+    }
+
+
+//    public static IntList reverse(IntList L) {
+//        if (L == null) {
+//            return null;
+//        }
+//        IntList pre = L, p = L.rest;
+//        pre.rest = null;
+//        while (p != null) {
+//            IntList q = p.rest;
+//            p.rest = pre;
+//            pre = p;
+//            p = q;
+//        }
+//        return pre;
+//    }
+
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
         if (A == null && B ==null) {
@@ -131,6 +183,7 @@ public class IntList {
             return new1;
 
         }
+
     }
 
 
