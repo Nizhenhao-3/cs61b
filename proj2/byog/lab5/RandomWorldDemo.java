@@ -52,6 +52,7 @@ public class RandomWorldDemo {
         fillWithRandomTiles(randomTiles);
 
         ter.renderFrame(randomTiles);
+
     }
 
 
